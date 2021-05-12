@@ -1,7 +1,9 @@
-package entities;
+package model.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import model.exception.DomainException;
 
 public class Anuncio {
 
@@ -13,6 +15,10 @@ public class Anuncio {
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	public Anuncio(String nomeA, String nomeCliente, Date dataInicio, Date dataTermino, Double investimentoPorDia) {
+		if (!dataTermino.after(dataInicio)) {
+			throw new DomainException("Data de término deve ser posterior a data de início");
+		}
+
 		this.nomeA = nomeA;
 		this.nomeCliente = nomeCliente;
 		this.dataInicio = dataInicio;
@@ -64,7 +70,7 @@ public class Anuncio {
 	public String toString() {
 		Calculadora calc = new Calculadora(getNomeA(), getNomeCliente(), getDataInicio(), getDataTermino(),
 				getInvestimentoPorDia());
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("Anúncio: ");
 		sb.append(getNomeA());
@@ -84,8 +90,8 @@ public class Anuncio {
 	}
 
 	public String toStringT(Date dataInicioFiltro, Date getDataTermino) {
-		Calculadora calc = new Calculadora(getNomeA(), getNomeCliente(), getDataInicio(),
-				getDataTermino(), getInvestimentoPorDia());
+		Calculadora calc = new Calculadora(getNomeA(), getNomeCliente(), getDataInicio(), getDataTermino(),
+				getInvestimentoPorDia());
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Anúncio: ");
@@ -108,7 +114,7 @@ public class Anuncio {
 		sb.append(calc.qtdMaxCompartilhamentoFiltroT(dataInicioFiltro, getDataTermino()));
 		return sb.toString();
 	}
-	
+
 	public String toStringI(Date getDataIinicio, Date dataTerminoFiltro) {
 		Calculadora calc = new Calculadora(getNomeA(), getNomeCliente(), getDataInicio(), getDataTermino(),
 				getInvestimentoPorDia());
@@ -138,6 +144,7 @@ public class Anuncio {
 	public String toStringTI(Date dataInicioFiltro, Date dataTerminoFiltro) {
 		Calculadora calc = new Calculadora(getNomeA(), getNomeCliente(), getDataInicio(), getDataTermino(),
 				getInvestimentoPorDia());
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("Anúncio: ");
 		sb.append(getNomeA());
