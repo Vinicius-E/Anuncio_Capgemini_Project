@@ -34,6 +34,9 @@ public class Clientes {
 			if (a.getNomeCliente().equals(nomeCLiente)) {
 				System.out.println(a.toString());
 			}
+			else {
+				System.out.println("Este cliente não possui nenhum anúncio!");
+			}
 		}
 	}
 
@@ -52,94 +55,27 @@ public class Clientes {
 				System.out.println(a.toString());
 				System.out.println();
 				
-			} else if (dataInicioFiltro.getTime() > a.getDataInicio().getTime()
+			} else if (dataInicioFiltro.getTime() >= a.getDataInicio().getTime()
 					&& dataInicioFiltro.getTime() < a.getDataTermino().getTime()
 					&& dataTerminoFiltro.getTime() >= a.getDataTermino().getTime()) {
 
-				Calculadora calc = new Calculadora(a.getNomeA(), a.getNomeCliente(), a.getDataInicio(),
-						a.getDataTermino(), a.getInvestimentoPorDia());
-
-				StringBuilder sb = new StringBuilder();
-				sb.append("Anúncio: ");
-				sb.append(a.getNomeA());
-				sb.append("		    Cliente: ");
-				sb.append(a.getNomeCliente() + "\n");
-				sb.append("Data inicial: ");
-				sb.append(sdf.format(dataInicioFiltro));
-				sb.append("   	    Data término: ");
-				sb.append(sdf.format(a.getDataTermino()) + "\n");
-				sb.append("Investimento por dia: R$");
-				sb.append(String.format("%.2f", a.getInvestimentoPorDia()) + "\n");
-				sb.append("Valor total investido: R$");
-				sb.append(String.format("%.2f", calc.totalInvestidoFiltroT(dataInicioFiltro, a.getDataTermino())));
-				sb.append("\nQuantidade máxima de vizualizações: ");
-				sb.append(calc.qtdMaxVizualizacoesFiltroT(dataInicioFiltro, a.getDataTermino()));
-				sb.append("\nQuantidade máxima de cliques: ");
-				sb.append(calc.qtdMaxCliquesFiltroT(dataInicioFiltro, a.getDataTermino()));
-				sb.append("\nQuantidade máxima de compartilhamentos: ");
-				sb.append(calc.qtdMaxCompartilhamentoFiltroT(dataInicioFiltro, a.getDataTermino()));
-
-				System.out.println(sb.toString());
+				System.out.println("CAIU NO SEGUNDO");
+				System.out.println(a.toStringT(dataInicioFiltro, a.getDataTermino()));
 				System.out.println();
 				
-			} else if (dataInicioFiltro.getTime() <= a.getDataInicio().getTime()
+			} else if (dataInicioFiltro.getTime() < a.getDataInicio().getTime()
 					&& dataTerminoFiltro.getTime() > a.getDataInicio().getTime()
 					&& dataTerminoFiltro.getTime() <= a.getDataTermino().getTime()) {
-
-				Calculadora calc = new Calculadora(a.getNomeA(), a.getNomeCliente(), a.getDataInicio(),
-						a.getDataTermino(), a.getInvestimentoPorDia());
-
-				StringBuilder sb = new StringBuilder();
-				sb.append("Anúncio: ");
-				sb.append(a.getNomeA());
-				sb.append("		            Cliente: ");
-				sb.append(a.getNomeCliente() + "\n");
-				sb.append("Data inicial: ");
-				sb.append(sdf.format(a.getDataInicio()));
-				sb.append("   	    Data término: ");
-				sb.append(sdf.format(dataTerminoFiltro) + "\n");
-				sb.append("Investimento por dia: R$");
-				sb.append(String.format("%.2f", a.getInvestimentoPorDia()) + "\n");
-				sb.append("Valor total investido: R$");
-				sb.append(String.format("%.2f", calc.totalInvestidoFiltroI(a.getDataInicio(), dataTerminoFiltro)));
-				sb.append("\nQuantidade máxima de vizualizações: ");
-				sb.append(calc.qtdMaxVizualizacoesFiltroI(a.getDataInicio(), dataTerminoFiltro));
-				sb.append("\nQuantidade máxima de cliques: ");
-				sb.append(calc.qtdMaxCliquesFiltroI(a.getDataInicio(), dataTerminoFiltro));
-				sb.append("\nQuantidade máxima de compartilhamentos: ");
-				sb.append(calc.qtdMaxCompartilhamentoFiltroI(a.getDataInicio(), dataTerminoFiltro));
-
-				System.out.println(sb.toString());
+				
+				System.out.println("CAIU NO TERCEIRO");
+				System.out.println(a.toStringI(a.getDataInicio(), dataTerminoFiltro));
 				System.out.println();
 				
 			} else if (dataInicioFiltro.getTime() >= a.getDataInicio().getTime()
 					&& dataTerminoFiltro.getTime() <= a.getDataTermino().getTime()) {
-
-				Calculadora calc = new Calculadora(a.getNomeA(), a.getNomeCliente(), a.getDataInicio(),
-						a.getDataTermino(), a.getInvestimentoPorDia());
-
-				StringBuilder sb = new StringBuilder();
-				sb.append("Anúncio: ");
-				sb.append(a.getNomeA());
-				sb.append("		    Cliente: ");
-				sb.append(a.getNomeCliente() + "\n");
-				sb.append("Data inicial: ");
-				sb.append(sdf.format(dataInicioFiltro));
-				sb.append("   	    Data término: ");
-				sb.append(sdf.format(dataTerminoFiltro) + "\n");
-				sb.append("Investimento por dia: R$");
-				sb.append(String.format("%.2f", a.getInvestimentoPorDia()) + "\n");
-				sb.append("Valor total investido: R$"
-						+ String.format("%.2f", calc.totalInvestidoFiltroTI(dataInicioFiltro, dataTerminoFiltro))
-						+ "\n");
-				sb.append("Quantidade máxima de vizualizações: "
-						+ calc.qtdMaxVizualizacoesFiltroTI(dataInicioFiltro, dataTerminoFiltro) + "\n");
-				sb.append("Quantidade máxima de cliques: "
-						+ calc.qtdMaxCliquesFiltroTI(dataInicioFiltro, dataTerminoFiltro) + "\n");
-				sb.append("Quantidade máxima de compartilhamentos: "
-						+ calc.qtdMaxCompartilhamentoFiltroTI(dataInicioFiltro, dataTerminoFiltro) + "\n");
-
-				System.out.println(sb.toString());
+				
+				System.out.println("CAIU NO QUARTO");
+				System.out.println(a.toStringTI(dataInicioFiltro, dataTerminoFiltro));
 				System.out.println();
 
 			} else if (dataInicioFiltro.getTime() < a.getDataTermino().getTime()
