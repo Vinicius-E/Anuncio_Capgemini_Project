@@ -48,5 +48,6 @@ Exemplo filtro por nome de cliente:
 ![Filtro por Nome de Cliente](https://user-images.githubusercontent.com/80331827/118142486-cee39680-b3e0-11eb-9e75-98d6f761df1c.png)
 
 Exemplo filtro por intervalo de Tempo:
+
 ![Filtro por Intervalo de Tempo](https://user-images.githubusercontent.com/80331827/118142941-3c8fc280-b3e1-11eb-9c71-63b518ae5127.png)
 
