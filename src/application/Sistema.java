@@ -85,8 +85,8 @@ public class Sistema {
 				} else {
 					System.out.print("Intervalo de tempo - Data início (dd/mm/aaaa): ");
 					String dataInicio = sc.next();
-					System.out.print("Intervalo de tempo - Data data término (dd/mm/aaaa): ");
-					String dataTermino = sc.next();
+					System.out.print("Intervalo de tempo - Data término (dd/mm/aaaa): ");
+					String dataTermino = sc.next();	
 
 					int diaI = Integer.parseInt(dataInicio.substring(0, 2));
 					int mesI = Integer.parseInt(dataInicio.substring(3, 5));
