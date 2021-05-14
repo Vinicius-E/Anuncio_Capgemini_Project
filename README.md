@@ -4,7 +4,7 @@ Crie um novo projeto na IDE com nome: "sistema_auncio.java".  <br/>
 Nesse projeto crie uma classe "Sistema" em um pacote "application".  <br/>
 Nesse projeto crie três classes em um pacote "model.entities". Nome das classes "Anuncio" , "Calculadora" e "Clientes".  <br/>
 Nesse projeto crie uma classe "DomainException" em um pacote "model.exception".  <br/> 
-Agora entre no GitHub e acesse o código fonte do reposítório "sistema_anuncio.java".  <br/>
+Entre no GitHub e acesse o código fonte do reposítório "sistema_anuncio.java".  <br/>
 ![GitHub locale](https://user-images.githubusercontent.com/80331827/118290807-3830db80-b4ad-11eb-9916-a671d0e23326.png)  <br/>
 ![Código Fonte](https://user-images.githubusercontent.com/80331827/118290844-441c9d80-b4ad-11eb-8d76-7d8f8594ba78.png)  <br/>
 Agora copie os códigos de cada classe do repositório no GitHub e cole no projeto "sistema_anuncio.java" na sua IDE. Colando os códigos respectivamente com o mesmo nome de classe.  <br/>
