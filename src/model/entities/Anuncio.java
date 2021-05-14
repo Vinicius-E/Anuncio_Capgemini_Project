@@ -74,7 +74,7 @@ public class Anuncio {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Anúncio: ");
 		sb.append(getNomeA());
-		sb.append("		    Cliente: ");
+		sb.append("		        Cliente: ");
 		sb.append(getNomeCliente() + "\n");
 		sb.append("Data inicial: ");
 		sb.append(sdf.format(getDataInicio()));

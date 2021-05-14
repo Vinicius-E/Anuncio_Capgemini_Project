@@ -61,7 +61,7 @@ public class Sistema {
 			} else if (c1 == 't' || c1 == 'T') {
 				System.out.print("Intervalo de tempo - Data início (dd/mm/aaaa): ");
 				String dataInicio = sc.next();
-				System.out.print("Intervalo de tempo - Data data término (dd/mm/aaaa): ");
+				System.out.print("Intervalo de tempo - Data término (dd/mm/aaaa): ");
 				String dataTermino = sc.next();
 
 				int diaI = Integer.parseInt(dataInicio.substring(0, 2));
